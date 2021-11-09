@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="200a8e01-34cf-43a4-b228-9c4389b874f8" Name="Setup_digiCamControl" Language="1033" Version="1.0.0.0" Manufacturer="Duka Istvan" UpgradeCode="9e6d5708-9441-4a30-b164-d17bdcb34a09">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+    
+    <Media Id="01" Cabinet="Product.cab" EmbedCab="yes" CompressionLevel="high"/>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="digiCamControl">
+
+        </Directory>
+      </Directory>
+
+      <!-- Shortcuts and Directories for Shortcuts go here -->
+
+    </Directory>
+    
+		<Feature Id="ProductFeature" Title="Setup_digiCamControl" Level="1">
+			<!--<ComponentGroupRef Id="ProductComponents" />-->
+		</Feature>
+	</Product>
+
+	<!--<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="digiCamControl" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			--><!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. --><!--
+			--><!-- <Component Id="ProductComponent"> --><!--
+				--><!-- TODO: Insert files, registry keys, and other resources here. --><!--
+			--><!-- </Component> --><!--
+		</ComponentGroup>
+	</Fragment>-->
+</Wix>

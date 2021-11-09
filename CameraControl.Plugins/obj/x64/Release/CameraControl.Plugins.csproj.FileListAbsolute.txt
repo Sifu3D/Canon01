@@ -1,0 +1,6 @@
+D:\Programs\digicamcontrol-release\CameraControl.Plugins\obj\x64\Release\Astro\PHDWnd.baml
+D:\Programs\digicamcontrol-release\CameraControl.Plugins\obj\x64\Release\Resources\Icons.baml
+D:\Programs\digicamcontrol-release\CameraControl.Plugins\obj\x64\Release\Astro\PHDWnd.g.cs
+D:\Programs\digicamcontrol-release\CameraControl.Plugins\obj\x64\Release\MainWindowPlugins\SimpleMainWindow.g.cs
+D:\Programs\digicamcontrol-release\CameraControl.Plugins\obj\x64\Release\CameraControl.Plugins_MarkupCompile.cache
+D:\Programs\digicamcontrol-release\CameraControl.Plugins\obj\x64\Release\CameraControl.Plugins_MarkupCompile.lref

@@ -1,0 +1,220 @@
+﻿<Controls:MetroWindow  x:Class="CameraControl.windows.SettingsWnd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{T:TranslateExtension SettingsWindowTitle}" Height="506" Width="610" Loaded="Window_Loaded" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                       xmlns:Core="clr-namespace:CameraControl.Core;assembly=CameraControl.Core" ShowMaxRestoreButton="False" ShowMinButton="False"
+                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" xmlns:my="clr-namespace:Gma.QrCodeNet.Encoding.Windows.WPF;assembly=Gma.QrCodeNet.Encoding"
+                       xmlns:T="clr-namespace:CameraControl.Core.Translation;assembly=CameraControl.Core"
+                       xmlns:Controls1="clr-namespace:CameraControl.Controls">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />-->
+                <ResourceDictionary Source="pack://application:,,,/CameraControl;component/Styles/Wpf.Toolkit.Extended.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/VS/Colours.xaml"/>-->
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/VS/Styles.xaml"/>-->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Controls:MetroWindow.WindowCommands>
+        <Controls:WindowCommands>
+            <Button Content="{T:TranslateExtension ButtonHelp}" Name="btn_help" Click="btn_help_Click" Visibility="{Binding Source={x:Static Member=Core:ServiceProvider.Branding}, Path=OnlineReference, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.WindowCommands>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="220*" />
+            <RowDefinition Height="41*" />
+        </Grid.RowDefinitions>
+        <TabControl Name="tabControl1" TabStripPlacement="Left">
+            <TabItem Header="{T:TranslateExtension LabelGeneral}" Name="tabItem1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="100*" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="100*" />
+                        <ColumnDefinition Width="10" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="83*" />
+                        <RowDefinition Height="29*" />
+                    </Grid.RowDefinitions>
+                    <Label Content="{T:TranslateExtension LabelTheme}" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center"/>
+                    <ComboBox Name="cmb_themes" Grid.Row="1" Grid.Column="3" SelectedIndex="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=CurrentThemeIndex}" Margin="2">
+                        <ComboBoxItem Content="Dark/Blue" />
+                        <ComboBoxItem Content="Dark/Green" />
+                        <ComboBoxItem Content="Dark/Orange" />
+                        <ComboBoxItem Content="Dark/Purple" />
+                        <ComboBoxItem Content="Dark/Red" />
+                        <ComboBoxItem Content="Light/Blue" />
+                        <ComboBoxItem Content="Light/Green" />
+                        <ComboBoxItem Content="Light/Orange" />
+                        <ComboBoxItem Content="Light/Purple" />
+                        <ComboBoxItem Content="Light/Red" />
+                    </ComboBox>
+                    <Label Content="{T:TranslateExtension LabelMainWindow}" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center" />
+                    <ComboBox Name="cmb_mainwindow" Grid.Row="2" Grid.Column="3" SelectedItem="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=SelectedMainForm}" Margin="2"/>                    
+                    
+                    <Label Content="{T:TranslateExtension LabelInterfaceLanguage}" Grid.Row="4" Grid.Column="1"/>
+                    <ComboBox  ItemsSource="{Binding Source={x:Static Member=T:TranslationManager.AvailableLangs}}" DisplayMemberPath="Name" SelectedValuePath="Value"  SelectedValue="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=SelectedLanguage}" Grid.Row="4" Grid.Column="3" Margin="2"/>
+                    <Label Content="{T:TranslateExtension LabelExternalViewerPath}" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" />
+                    <TextBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="6" Margin="2,2,38,2" Text="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=ExternalViewer}" />
+                    <Button Content="..." Grid.Column="3" Grid.Row="6" Height="35" HorizontalAlignment="Right" Margin="2" Name="btn_browse_file" VerticalAlignment="Top" Width="29" Click="btn_browse_file_Click" />
+                    <CheckBox Content="{T:TranslateExtension LabelUseExternalViewer}" Grid.Column="1" Grid.Row="7"  Grid.ColumnSpan="3" IsChecked="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=UseExternalViewer}" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="9" Text="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=ExternalViewerPath}" Margin="2,2,38,2" />
+                    <Button Content="..." Grid.Column="3" Grid.Row="9" Height="33" HorizontalAlignment="Right" Margin="2" Name="button4" VerticalAlignment="Top" Width="28" Click="button4_Click" />
+                    <Label Content="{T:TranslateExtension LabelExternalPreViewerPath}" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="3" />
+                    <Label Content="{T:TranslateExtension LabelExternalPreViewerArgs}" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="3" />
+                    <TextBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="11"  Text="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=ExternalViewerArgs}" Margin="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{T:TranslateExtension LabelPreview}">
+                <StackPanel Margin="10" >
+                    <StackPanel Orientation="Horizontal" Margin="3">
+                        <CheckBox Content="{T:TranslateExtension LabelPlaySound}"  IsChecked="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=PlaySound}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="3">
+                        <CheckBox Content="{T:TranslateExtension LabelAutoPreview}"  IsChecked="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=AutoPreview}" ToolTip="Disable this option if you use Lightroom"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="3">
+                        <CheckBox Content="{T:TranslateExtension LabelShowFocusPoints}"  IsChecked="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=ShowFocusPoints}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="3">
+                        <CheckBox Content="{T:TranslateExtension LabelLowMemoryUsage}"  IsChecked="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=LowMemoryUsage}" />
+                    </StackPanel>
+
+                    <StackPanel Margin="3">
+                        <CheckBox Content="{T:TranslateExtension LabelPreviewAfterCapture}" IsChecked="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=Preview}"/>
+                        <StackPanel Orientation="Horizontal" Margin="3">
+                            <Label Content="{T:TranslateExtension LabelPreviewTime}"/>
+                            <xctk:IntegerUpDown Minimum="2" Width="100" Value="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=PreviewSeconds}"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Margin="3">
+                        <CheckBox Content="{T:TranslateExtension LabelPreviewInLIveView}" IsChecked="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=PreviewLiveViewImage}"/>
+                        <StackPanel Orientation="Horizontal" Margin="3">
+                            <Label Content="{T:TranslateExtension LabelLIveViewImageFreeze}"/>
+                            <xctk:IntegerUpDown Minimum="2" Maximum="120" Width="100" Value="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=LiveViewFreezeTimeOut}"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="3">
+                        <Label Content="{T:TranslateExtension LabelRotateImage}"/>
+                        <ComboBox SelectedIndex="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=RotateIndex}">
+                            <ComboBoxItem Content="{T:TranslateExtension LabelRotateNone}" />
+                            <ComboBoxItem Content="{T:TranslateExtension LabelRotate90}" />
+                            <ComboBoxItem Content="{T:TranslateExtension LabelRotate180}" />
+                            <ComboBoxItem Content="{T:TranslateExtension LabelRotate270}" />
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="3">
+                        <CheckBox Content="{T:TranslateExtension LabelDontLoadThumbs}" IsChecked="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=DontLoadThumbnails}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="3">
+                        <Label Content="{T:TranslateExtension LabelFullscrenBack}"/>
+                        <xctk:ColorPicker SelectedColor="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=FullScreenColor}" Width="110"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="{T:TranslateExtension LabelTriggers}">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="132*" />
+                        <RowDefinition Height="252*" />
+                    </Grid.RowDefinitions>
+                    <GroupBox Header="Keyboard" Height="125" VerticalAlignment="Top">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25*" />
+                            </Grid.RowDefinitions>
+                            <CheckBox Content="{T:TranslateExtension LabelUseKeybordToTrigger}" Height="16" HorizontalAlignment="Left" Margin="10,8,0,0" Name="chk_usekey" VerticalAlignment="Top" IsChecked="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=UseTriggerKey}"/>
+                            <CheckBox Content="Alt" Height="16" HorizontalAlignment="Left" Margin="10,32,0,0" Name="checkBox2" VerticalAlignment="Top" IsChecked="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=TriggerKeyAlt}" IsEnabled="{Binding ElementName=chk_usekey, Path=IsChecked}"/>
+                            <CheckBox Content="Ctrl" Height="16" HorizontalAlignment="Left" Margin="83,31,0,0" Name="checkBox3" VerticalAlignment="Top" IsChecked="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=TriggerKeyCtrl}" IsEnabled="{Binding ElementName=chk_usekey, Path=IsChecked}"/>
+                            <CheckBox Content="Shift" Height="16" HorizontalAlignment="Left" Margin="161,31,0,0" Name="checkBox4" VerticalAlignment="Top" IsChecked="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=TriggerKeyShift}" IsEnabled="{Binding ElementName=chk_usekey, Path=IsChecked}"/>
+                            <ComboBox Height="23" HorizontalAlignment="Left" Margin="10,58,0,0" Name="cmb_keys" VerticalAlignment="Top" Width="111" SelectedItem="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=TriggerKey}" IsEnabled="{Binding ElementName=chk_usekey, Path=IsChecked}"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{T:TranslateExtension LabelWebserver}" Margin="0,0,0,6" Grid.Row="1">
+                        <Grid ToolTip="{T:TranslateExtension ReStartToolTip}">
+                            <CheckBox Content="{T:TranslateExtension LabelUseWebserver}" Height="16" HorizontalAlignment="Left" Margin="10,14,0,0" Name="checkBox1" VerticalAlignment="Top" IsChecked="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=UseWebserver}"/>
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="6,49,0,0" Name="textBox1" VerticalAlignment="Top" Width="290" IsReadOnly="True" Text="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=Webaddress, Mode=OneTime}"/>
+                            <my:QrCodeImgControl Height="145" HorizontalAlignment="Left" Margin="6,81,0,0" Stretch="Uniform" VerticalAlignment="Top" Width="143" Name="qrcode"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{T:TranslateExtension LabelFocusAndLiveview}">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="170" />
+                        <ColumnDefinition Width="150*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="260*" />
+                    </Grid.RowDefinitions>
+
+                    <Controls1:AdvancedSlider Minimum="1" Maximum="50" Label="{T:TranslateExtension LabelSmallFocusSstep}" Grid.ColumnSpan="3" Margin="1,0" Value="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=SmalFocusStep}"  Grid.Row="1" Grid.Column="0"/>
+                    <Controls1:AdvancedSlider Minimum="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=SmalFocusStep}" Maximum="250" Label="{T:TranslateExtension LabelMediumFocusStep}" Grid.ColumnSpan="3" Margin="1,0" Value="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=MediumFocusStep}"  Grid.Row="2" Grid.Column="0"/>
+                    <Controls1:AdvancedSlider Minimum="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=MediumFocusStep}" Maximum="2500" Label="{T:TranslateExtension LabelLargFocusStep}" Grid.ColumnSpan="3" Margin="1,0" Value="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=LargeFocusStep}"  Grid.Row="3" Grid.Column="0"/>
+
+                    <Label Content="{T:TranslateExtension LabelMotionDetectionType}" Grid.Row="4" HorizontalContentAlignment="Right" />
+                    <ComboBox Grid.Column="1" Grid.Row="4" Margin="3" ItemsSource="{Binding}" SelectedIndex="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=DetectionType}">
+                        <ComboBoxItem Content="{T:TranslateExtension LabelTwoFramesDifferenceDetector}"/>
+                        <ComboBoxItem Content="{T:TranslateExtension LabelSimpleBackgroundModelingDetector}"/>
+                    </ComboBox>
+                    <Controls1:AdvancedSlider Minimum="5" Maximum="250" Label="{T:TranslateExtension LabelSmallestBlockSize}" Grid.ColumnSpan="3" Margin="1,0" Value="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=MotionBlockSize}"  Grid.Row="5" Grid.Column="0"/>
+                    
+                </Grid>
+            </TabItem>
+            <TabItem Header="{T:TranslateExtension LabelAdvanced}">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="170" />
+                        <ColumnDefinition Width="150*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="260*" />
+                    </Grid.RowDefinitions>
+                    <CheckBox Content="{T:TranslateExtension LabelUseParellelTransfer}" Grid.ColumnSpan="2" IsChecked="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=UseParallelTransfer}" Margin="0,4,0,1" Grid.RowSpan="2" />
+                    <CheckBox Content="{T:TranslateExtension LabelShowUnTranslatedStringIds}" Grid.ColumnSpan="2" IsChecked="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=ShowUntranslatedLabelId}" Grid.Row="2" />
+                    <Controls:ToggleSwitch Header="{T:TranslateExtension LabelDisableDriver}" UseLayoutRounding="False" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" IsChecked="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=DisableNativeDrivers}" ToolTip="This option disable special handig of some cameras. Use this if you experience some problem" Margin="1,0,1,1" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button Content="{T:TranslateExtension ButtonOk}" IsDefault="True" Name="button1" Width="75" Margin="12,12,0,16" Grid.Row="1" HorizontalAlignment="Left" Click="button1_Click" />
+        <Button Content="{T:TranslateExtension ButtonCancel}" IsCancel="True" Name="button2" Width="75" Margin="0,12,12,16" Grid.Row="1" Click="button2_Click" HorizontalAlignment="Right" />
+        <Button Content="{T:TranslateExtension ButtonLocateLogFile}" Name="button3" Click="button3_Click" Grid.Row="1" Margin="115,12,0,16" HorizontalAlignment="Left" Width="125" />
+        <Button Content="{T:TranslateExtension ButtonResetSettings}" Grid.Row="1" Name="btn_reset" Click="btn_reset_Click" Margin="0,12,113,16" HorizontalAlignment="Right" Width="97" />
+    </Grid>
+</Controls:MetroWindow >

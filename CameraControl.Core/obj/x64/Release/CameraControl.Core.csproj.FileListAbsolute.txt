@@ -1,0 +1,6 @@
+D:\Programs\digicamcontrol-release\CameraControl.Core\obj\x64\Release\CameraControl.Core.csprojResolveAssemblyReference.cache
+D:\Programs\digicamcontrol-release\CameraControl.Core\obj\x64\Release\Resources\Icons.baml
+D:\Programs\digicamcontrol-release\CameraControl.Core\obj\x64\Release\Wpf\ProgressWindow.baml
+D:\Programs\digicamcontrol-release\CameraControl.Core\obj\x64\Release\Wpf\ProgressWindow.g.cs
+D:\Programs\digicamcontrol-release\CameraControl.Core\obj\x64\Release\CameraControl.Core_MarkupCompile.cache
+D:\Programs\digicamcontrol-release\CameraControl.Core\obj\x64\Release\CameraControl.Core.g.resources

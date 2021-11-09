@@ -1,0 +1,8 @@
+﻿<Window x:Class="CameraControl.StartUpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="StartUpWindow" Height="348" Width="435" AllowsTransparency="True" Background="{x:Null}" ShowInTaskbar="False" Topmost="True" WindowStyle="None" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Image Name="background" Stretch="Uniform" Source="file:///D:/devel/vs2010/CameraControl/CameraControl/SplashScreen1.png" />
+    </Grid>
+</Window>

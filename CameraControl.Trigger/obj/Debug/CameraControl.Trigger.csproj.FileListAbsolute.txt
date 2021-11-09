@@ -1,0 +1,4 @@
+D:\Programs\digicamcontrol-release\CameraControl.Trigger\bin\Debug\CameraControl.Trigger.dll
+D:\Programs\digicamcontrol-release\CameraControl.Trigger\bin\Debug\CameraControl.Trigger.pdb
+D:\Programs\digicamcontrol-release\CameraControl.Trigger\obj\Debug\CameraControl.Trigger.dll
+D:\Programs\digicamcontrol-release\CameraControl.Trigger\obj\Debug\CameraControl.Trigger.pdb

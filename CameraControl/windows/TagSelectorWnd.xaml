@@ -1,0 +1,67 @@
+﻿<Controls:MetroWindow x:Class="CameraControl.windows.TagSelectorWnd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tag selector" Height="339" Width="769" Topmost="True" Closing="Window_Closing" xmlns:my="clr-namespace:CameraControl.windows"
+        xmlns:Core="clr-namespace:CameraControl.Core;assembly=CameraControl.Core"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      WindowStyle="ToolWindow" UseLayoutRounding="True" ShowMaxRestoreButton="False">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/CameraControl;component/Styles/Wpf.Toolkit.Extended.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/VS/Colours.xaml"/>-->
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/VS/Styles.xaml"/>-->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+        <Style TargetType="{x:Type ListBox}" BasedOn="{StaticResource  {x:Type ListBox}}">
+            <!-- Set the ItemTemplate of the ListBox to a DataTemplate which
+           explains how to display an object of type BitmapImage. -->
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Label Content="{Binding Path=DisplayValue}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" FontWeight="Bold" Height="40" Padding="15,2" Margin="5"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <WrapPanel VerticalAlignment="Center"/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        </ResourceDictionary>            
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*" />
+            <RowDefinition Height="60*" />
+            <RowDefinition Height="60*" />
+            <RowDefinition Height="60*" />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+        <ListBox Name="lst_tag1" Margin="5" ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:TagSelectorWnd, AncestorLevel=1}, Path=Tags1}" SelectedItem="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=DefaultSession.SelectedTag1}" Background="{DynamicResource WindowBackgroundBrush}"/>
+        <ListBox Grid.Row="1" Name="lst_tag2" Margin="5" ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:TagSelectorWnd, AncestorLevel=1}, Path=Tags2}" SelectedItem="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=DefaultSession.SelectedTag2}" Background="{DynamicResource WindowBackgroundBrush}"/>
+        <ListBox Grid.Row="2" Name="lst_tag3" Margin="5" ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:TagSelectorWnd, AncestorLevel=1}, Path=Tags3}" SelectedItem="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=DefaultSession.SelectedTag3}" Background="{DynamicResource WindowBackgroundBrush}"/>
+        <ListBox Grid.Row="3" Name="lst_tag4" Margin="5" ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:TagSelectorWnd, AncestorLevel=1}, Path=Tags4}" SelectedItem="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=DefaultSession.SelectedTag4}" Background="{DynamicResource WindowBackgroundBrush}"/>
+        <StackPanel Grid.Row="4" Orientation="Horizontal">
+            <Label Content="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=DefaultSession.SelectedTag1.DisplayValue}" />
+            <Label Content="/"/>
+            <Label Content="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=DefaultSession.SelectedTag2.DisplayValue}" />
+            <Label Content="/"/>
+            <Label Content="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=DefaultSession.SelectedTag3.DisplayValue}" />
+            <Label Content="/"/>
+            <Label Content="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=DefaultSession.SelectedTag4.DisplayValue}" />
+        </StackPanel>
+    </Grid>
+</Controls:MetroWindow>

@@ -1,0 +1,5 @@
+D:\Programs\digicamcontrol-release\PortableDeviceLib\bin\x64\Release\PortableDeviceLib.dll
+D:\Programs\digicamcontrol-release\PortableDeviceLib\bin\x64\Release\Interop.PortableDeviceApiLib.dll
+D:\Programs\digicamcontrol-release\PortableDeviceLib\bin\x64\Release\Interop.PortableDeviceTypesLib.dll
+D:\Programs\digicamcontrol-release\PortableDeviceLib\obj\x64\Release\PortableDeviceLib.csprojResolveAssemblyReference.cache
+D:\Programs\digicamcontrol-release\PortableDeviceLib\obj\x64\Release\PortableDeviceLib.dll

@@ -1,0 +1,5 @@
+D:\Programs\digicamcontrol-release\CameraControl.Trigger\bin\x86\Release\CameraControl.Trigger.dll
+D:\Programs\digicamcontrol-release\CameraControl.Trigger\bin\x86\Release\CameraControl.Trigger.pdb
+D:\Programs\digicamcontrol-release\CameraControl.Trigger\obj\x86\Release\CameraControl.Trigger.csprojResolveAssemblyReference.cache
+D:\Programs\digicamcontrol-release\CameraControl.Trigger\obj\x86\Release\CameraControl.Trigger.dll
+D:\Programs\digicamcontrol-release\CameraControl.Trigger\obj\x86\Release\CameraControl.Trigger.pdb

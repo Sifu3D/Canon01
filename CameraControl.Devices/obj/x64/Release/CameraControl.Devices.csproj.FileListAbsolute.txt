@@ -1,0 +1,1 @@
+D:\Programs\digicamcontrol-release\CameraControl.Devices\obj\x64\Release\CameraControl.Devices.csprojResolveAssemblyReference.cache

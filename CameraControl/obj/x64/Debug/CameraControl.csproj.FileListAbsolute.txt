@@ -1,0 +1,3 @@
+D:\Programs\digicamcontrol-release\CameraControl\bin\x64\Debug\CameraControl.exe.config
+D:\Programs\digicamcontrol-release\CameraControl\obj\x64\Debug\Interop.WIA.dll
+D:\Programs\digicamcontrol-release\CameraControl\obj\x64\Debug\CameraControl.csproj.ResolveComReference.cache

@@ -1,0 +1,5 @@
+D:\Programs\digicamcontrol-release\Canon.Eos.Framework\bin\Debug\Canon.Eos.Framework.dll
+D:\Programs\digicamcontrol-release\Canon.Eos.Framework\bin\Debug\Canon.Eos.Framework.pdb
+D:\Programs\digicamcontrol-release\Canon.Eos.Framework\obj\Debug\Canon.Eos.Framework.csprojResolveAssemblyReference.cache
+D:\Programs\digicamcontrol-release\Canon.Eos.Framework\obj\Debug\Canon.Eos.Framework.dll
+D:\Programs\digicamcontrol-release\Canon.Eos.Framework\obj\Debug\Canon.Eos.Framework.pdb

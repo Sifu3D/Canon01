@@ -1,0 +1,4 @@
+D:\Programs\digicamcontrol-release\Canon.Eos.Framework\bin\x86\Release\Canon.Eos.Framework.dll
+D:\Programs\digicamcontrol-release\Canon.Eos.Framework\bin\x86\Release\Canon.Eos.Framework.pdb
+D:\Programs\digicamcontrol-release\Canon.Eos.Framework\obj\x86\Release\Canon.Eos.Framework.dll
+D:\Programs\digicamcontrol-release\Canon.Eos.Framework\obj\x86\Release\Canon.Eos.Framework.pdb

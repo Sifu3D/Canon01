@@ -1,0 +1,17 @@
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\bin\Debug\CameraControl.Devices.Example.exe
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\bin\Debug\CameraControl.Devices.Example.pdb
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\bin\Debug\CameraControl.Devices.dll
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\bin\Debug\PortableDeviceLib.dll
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\bin\Debug\Canon.Eos.Framework.dll
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\bin\Debug\Interop.PortableDeviceApiLib.dll
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\bin\Debug\Interop.PortableDeviceTypesLib.dll
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\bin\Debug\CameraControl.Devices.pdb
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\bin\Debug\PortableDeviceLib.pdb
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\bin\Debug\Canon.Eos.Framework.pdb
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\obj\x86\Debug\CameraControl.Devices.Example.csprojResolveAssemblyReference.cache
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\obj\x86\Debug\CameraControl.Devices.Example.Form1.resources
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\obj\x86\Debug\CameraControl.Devices.Example.LiveViewForm.resources
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\obj\x86\Debug\CameraControl.Devices.Example.Properties.Resources.resources
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\obj\x86\Debug\CameraControl.Devices.Example.csproj.GenerateResource.Cache
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\obj\x86\Debug\CameraControl.Devices.Example.exe
+D:\Programs\digicamcontrol-release\CameraControl.Devices.Example\obj\x86\Debug\CameraControl.Devices.Example.pdb

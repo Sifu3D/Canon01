@@ -1,0 +1,4 @@
+D:\Programs\digicamcontrol-release\PortableDeviceLib\bin\Release\PortableDeviceLib.dll
+D:\Programs\digicamcontrol-release\PortableDeviceLib\bin\Release\Interop.PortableDeviceApiLib.dll
+D:\Programs\digicamcontrol-release\PortableDeviceLib\bin\Release\Interop.PortableDeviceTypesLib.dll
+D:\Programs\digicamcontrol-release\PortableDeviceLib\obj\x86\Release\PortableDeviceLib.dll

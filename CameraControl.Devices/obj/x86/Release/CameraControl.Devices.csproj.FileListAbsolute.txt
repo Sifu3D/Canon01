@@ -1,0 +1,8 @@
+D:\Programs\digicamcontrol-release\CameraControl.Devices\bin\Release\CameraControl.Devices.dll
+D:\Programs\digicamcontrol-release\CameraControl.Devices\bin\Release\Canon.Eos.Framework.dll
+D:\Programs\digicamcontrol-release\CameraControl.Devices\bin\Release\PortableDeviceLib.dll
+D:\Programs\digicamcontrol-release\CameraControl.Devices\bin\Release\Interop.PortableDeviceApiLib.dll
+D:\Programs\digicamcontrol-release\CameraControl.Devices\bin\Release\Interop.PortableDeviceTypesLib.dll
+D:\Programs\digicamcontrol-release\CameraControl.Devices\bin\Release\Canon.Eos.Framework.pdb
+D:\Programs\digicamcontrol-release\CameraControl.Devices\obj\x86\Release\CameraControl.Devices.csprojResolveAssemblyReference.cache
+D:\Programs\digicamcontrol-release\CameraControl.Devices\obj\x86\Release\CameraControl.Devices.dll
